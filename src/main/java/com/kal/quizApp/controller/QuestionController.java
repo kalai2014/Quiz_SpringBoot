@@ -22,8 +22,18 @@ public class QuestionController {
     public List<Question> getQuestionByCategory(@PathVariable String category){
         return questionService.getQuestionByCategory(category);
     }
-    @PutMapping("add")
+    @PostMapping("add")
     public String addQuestion(@RequestBody Question question){
        return questionService.addQuestion(question);
+    }
+
+    @PutMapping("update")
+    public String updateQuestion(@RequestBody Question question){
+        return questionService.updateQuestion(question);
+    }
+
+    @DeleteMapping("delete/{id}")
+    public String deleteQuestion(@PathVariable int id){
+        return questionService.deleteQuestion(id);
     }
 }

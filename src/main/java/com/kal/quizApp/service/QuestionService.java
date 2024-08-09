@@ -24,4 +24,15 @@ public class QuestionService {
         questionDao.save(question);
         return "success";
     }
+
+    public String updateQuestion(Question question) {
+        questionDao.save(question);
+        return "Question updated";
+
+    }
+
+    public String deleteQuestion(int id) {
+        questionDao.deleteById(id);
+        return "dQuestion deleted";
+    }
 }
